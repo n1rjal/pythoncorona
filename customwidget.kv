@@ -1,0 +1,17 @@
+#:kivy 1.10.0
+
+<CustomWidget>:
+    last_name_text_input: last_name
+    Label:
+        text: "Key Value:"
+        pos: 95,500
+        size: 100, 30
+    TextInput:
+        id: last_name
+        pos: 100,500
+        size: 200, 30
+    Button:
+        text: "Search"
+        pos: 303,500
+        size: 60, 30
+        on_release: root.submit_surname()
