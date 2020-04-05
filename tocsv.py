@@ -7,12 +7,16 @@ import datetime
 
 
 def csv():
-
-    date=str(datetime.date.today())
-    filename='report '+date+'.json'
+    aa=input('Date\t[YYYY-MM-DD]\n eg 2020-4-5\n ==> ')
+    date=datetime.date(int(aa.split("-")[0]),int(aa.split("-")[1]),int(aa.split("-")[2]))
+    
+    #filename='report '+date+'.json'
+    filename='report '+str(date)+'.json'
     files=os.listdir('./reports')
-    if filename in files:
+    
+    if str(filename) in files:
         #lets read from the data of json file
+        print("Found the data file")
         with open('./reports/{}'.format(filename),'r') as filee:
             datas=json.load(filee)
     else:
@@ -68,5 +72,7 @@ def csv():
 
 
     #use this command to get data in csv
-    csvdata.to_csv("coronadata.csv")
+    csvdata.to_csv("./CSVs/data{}.csv".format(date))
     print("done")
+
+csv()

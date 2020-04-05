@@ -18,7 +18,7 @@ class CustomWidget(Widget):
         self.title,self.body=userdata(self.name)
         self.name = ''
         notify(title=self.title,body=self.body)
-        self.last_name_text_input=""  
+          
 
 class CustomWidgetApp(App):
     def build(self):
@@ -26,3 +26,4 @@ class CustomWidgetApp(App):
 
 if __name__ == "__main__":
     CustomWidgetApp().run()
+
