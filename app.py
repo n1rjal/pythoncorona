@@ -7,9 +7,9 @@ import pandas as pd
 def userdata(country):
     todaydate=str(datetime.date.today())
     todayfile="report {}.json".format(todaydate)
+    print(todayfile+"\n")
     with open('./reports/{}'.format(todayfile),"r") as filee:
         datas=json.load(filee)
-
     datafor=datas[country]
     heads=(datas['head'])
     print(heads)

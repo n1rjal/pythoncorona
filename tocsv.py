@@ -6,9 +6,11 @@ import os
 import datetime
 
 
-def csv():
-    aa=input('Date\t[YYYY-MM-DD]\n eg 2020-4-5\n ==> ')
-    date=datetime.date(int(aa.split("-")[0]),int(aa.split("-")[1]),int(aa.split("-")[2]))
+def csv(date=str(datetime.date.today())):
+    
+    if date!=str(datetime.date.today()):
+        aa=input('Date\t[YYYY-MM-DD]\n eg 2020-4-5\n ==> ')
+        date=datetime.date(int(aa.split("-")[0]),int(aa.split("-")[1]),int(aa.split("-")[2]))
     
     #filename='report '+date+'.json'
     filename='report '+str(date)+'.json'
@@ -74,5 +76,3 @@ def csv():
     #use this command to get data in csv
     csvdata.to_csv("./CSVs/data{}.csv".format(date))
     print("done")
-
-csv()
